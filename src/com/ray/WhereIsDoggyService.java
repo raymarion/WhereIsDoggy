@@ -17,19 +17,15 @@ import org.apache.http.protocol.HTTP;
 
 import android.app.Notification;
 import android.app.NotificationManager;
-import android.app.PendingIntent;
 import android.app.Service;
 import android.content.Context;
 import android.content.Intent;
-import android.graphics.Color;
 import android.location.Criteria;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
-import android.net.Uri;
 import android.os.Bundle;
 import android.os.IBinder;
-import android.os.Looper;
 import android.os.PowerManager;
 import android.text.format.DateFormat;
 import android.util.Log;
@@ -88,6 +84,11 @@ public class WhereIsDoggyService extends Service {
 	public IBinder onBind(Intent intent) {
 		// TODO Auto-generated method stub
 		return null;
+		
+		
+		
+		
+		////???????????
 	}
 	
  
@@ -113,7 +114,7 @@ public class WhereIsDoggyService extends Service {
 		}  
         
         try {
-			Thread.sleep(20);
+			Thread.sleep(20);///20 to short?
 		} catch (InterruptedException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -176,6 +177,7 @@ public class WhereIsDoggyService extends Service {
     public void prepareLocation() {
 		locMgr = (LocationManager) getSystemService(LOCATION_SERVICE);
 	
+		////////////////////240000 too lang ??
 		try {
 			locMgr.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 240000, 0,
 					locationListener);
